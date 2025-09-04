@@ -4,7 +4,7 @@
   "description": "We help retailers create marketing experiences their customers will love",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
-  "types": "lib/typescript/src/index.d.ts",
+  "types": "lib/typescript/index.d.ts",
   "react-native": "src/index",
   "source": "src/index",
   "ometria_sdk_version": {
@@ -30,7 +30,15 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "yarn example && yarn && yarn pods",
+    "build": "bob build",
+    "clean": "bob clean",
+    "prepare": "bob build"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": ["commonjs", "module", "typescript"]
   },
   "keywords": [
     "react-native",
@@ -46,11 +54,12 @@
   "homepage": "https://github.com/Ometria/ometria.react-native_sdk#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^18.4.3",
+    "@react-native-community/eslint-config": "^3.2.0",
     "@react-native-firebase/messaging": "^11.2.0",
     "@release-it/conventional-changelog": "^8.0.1",
     "@types/jest": "^29.5.11",
-    "@types/react": "^18.2.6",
-    "@types/react-native": "0.72.8",
+    "@types/react": "^19.1.12",
+    "@types/react-native": "^0.73.0",
     "commitlint": "^18.4.3",
     "eslint": "^8.19.0",
     "husky": "^4.2.5",
@@ -58,10 +67,10 @@
     "pod-install": "^0.1.39",
     "prettier": "^2.4.1",
     "react": "18.3.1",
+    "react-native": "0.77.0",
+    "react-native-builder-bob": "^0.40.13",
     "release-it": "^17.0.1",
-    "typescript": "5.0.4",
-    "@react-native-community/eslint-config": "^3.2.0",
-    "react-native": "0.77.0"
+    "typescript": "^5.9.2"
   },
   "peerDependencies": {
     "react": "*",
